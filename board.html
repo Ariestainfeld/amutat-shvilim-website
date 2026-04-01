@@ -18,233 +18,136 @@
           colors: {
             "primary": "#855328",
             "on-primary": "#ffffff",
-            "primary-container": "#d99b6a",
             "primary-fixed": "#ffdcc3",
-            "on-primary-fixed": "#2f1500",
             "surface": "#fef8f3",
-            "surface-dim": "#ded9d4",
-            "surface-variant": "#e6e2dd",
-            "surface-container": "#f2ede8",
             "surface-container-low": "#f8f3ee",
-            "surface-container-high": "#ece7e2",
             "on-surface": "#1d1b19",
             "on-surface-variant": "#51443b",
             "outline": "#84746a",
             "outline-variant": "#d6c3b7",
             "background": "#fef8f3",
           },
-          fontFamily: {
-            "headline": ["Heebo", "sans-serif"],
-            "body": ["Heebo", "sans-serif"],
-          },
+          fontFamily: { "body": ["Heebo", "sans-serif"] },
         },
       },
     }
   </script>
-
   <style>
     * { font-family: 'Heebo', sans-serif; }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   </style>
 </head>
 
-<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<body class="bg-background text-on-surface h-screen flex flex-col overflow-hidden md:overflow-hidden overflow-y-auto">
 
   <!-- Header -->
-  <header class="bg-white/80 backdrop-blur-sm border-b border-outline-variant/30 sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors text-sm font-bold">
-        <span class="material-symbols-outlined text-xl">arrow_forward</span>
-        חזרה לדף הבית
+  <header class="bg-white/80 backdrop-blur-sm border-b border-outline-variant/30 sticky top-0 z-50 flex-shrink-0">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+      <a href="javascript:history.back()" class="flex items-center gap-1.5 text-primary hover:text-primary/70 transition-colors text-sm font-bold">
+        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        חזרה
       </a>
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
         <span class="text-sm font-bold text-primary hidden sm:inline">עמותת בית החינוך הדמוקרטי שבילים</span>
-        <img alt="לוגו שבילים" class="w-10 h-10 object-contain" src="assets/logo.png"/>
+        <img alt="לוגו שבילים" class="w-8 h-8 object-contain" src="assets/logo.png"/>
       </div>
     </div>
   </header>
 
-  <!-- Content -->
-  <main class="flex-1 max-w-5xl mx-auto px-5 py-8 md:py-12 w-full">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="bg-primary-fixed w-12 h-12 rounded-full flex items-center justify-center text-primary">
-        <span class="material-symbols-outlined text-2xl">groups</span>
-      </div>
-      <h1 class="text-2xl md:text-3xl font-extrabold text-primary">חברי ועד ובעלי תפקידים</h1>
-    </div>
+  <!-- Content — fits in one screen on desktop -->
+  <main class="flex-1 max-w-6xl mx-auto px-4 py-4 md:py-5 w-full overflow-y-auto md:overflow-visible">
 
-    <p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
-      ועד העמותה פועל בהתנדבות לקידום מטרות העמותה ולניהולה השוטף.
-    </p>
+    <h1 class="text-xl md:text-2xl font-extrabold text-primary text-center mb-4">חברי ועד ובעלי תפקידים</h1>
+
+    <!-- Signatories -->
+    <h2 class="text-sm md:text-base font-bold text-on-surface border-b border-outline-variant/30 pb-1 mb-2">מורשי חתימה</h2>
+    <div class="grid grid-cols-3 gap-2 mb-3">
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">אריה שטיינפלד</h3>
+        <p class="text-xs text-on-surface-variant">יו"ר הוועד</p>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">דורון הרפז</h3>
+        <p class="text-xs text-on-surface-variant">חבר ועד</p>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">יניב ביטון</h3>
+        <p class="text-xs text-on-surface-variant">חבר ועד</p>
+      </div>
+    </div>
 
     <!-- Board Members -->
-    <div class="space-y-4">
-
-      <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2">מורשי חתימה</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">star</span>
-          </div>
-          <h3 class="font-bold text-on-surface">אריה שטיינפלד</h3>
-          <p class="text-sm text-on-surface-variant mt-1">יו"ר הוועד, מורשה חתימה</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2019</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">draw</span>
-          </div>
-          <h3 class="font-bold text-on-surface">דורון הרפז</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד, מורשה חתימה</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2014</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">draw</span>
-          </div>
-          <h3 class="font-bold text-on-surface">יניב ביטון</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד, מורשה חתימה</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2023</p>
-        </div>
+    <h2 class="text-sm md:text-base font-bold text-on-surface border-b border-outline-variant/30 pb-1 mb-2">חברי ועד</h2>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-2 mb-3">
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">אמית שפיריג</h3>
       </div>
-
-      <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mt-8">חברי ועד</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">אמית שפיריג</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועד</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2022</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">רותם סלע</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועד</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2022</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">מיכל גורן שגיא</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועד</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2021</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">מיכל דויטש</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועד</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2022</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">מלי כהן ברייר</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועד</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2020</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">צביקה שדה</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2020</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">אור דוכין</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2021</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">אופיר מילר</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2023</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">person</span>
-          </div>
-          <h3 class="font-bold text-on-surface">גולן נעים</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועד</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2026</p>
-        </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">רותם סלע</h3>
       </div>
-
-      <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mt-8">ועדת ביקורת</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">verified</span>
-          </div>
-          <h3 class="font-bold text-on-surface">אורית מרנדה</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חברת ועדת ביקורת</p>
-          <p class="text-xs text-outline mt-1">חברה מיום 2023</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">verified</span>
-          </div>
-          <h3 class="font-bold text-on-surface">צור דיאמנט</h3>
-          <p class="text-sm text-on-surface-variant mt-1">חבר ועדת ביקורת</p>
-          <p class="text-xs text-outline mt-1">חבר מיום 2024</p>
-        </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">מיכל גורן שגיא</h3>
       </div>
-
-      <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mt-8">בעלי תפקידים</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">admin_panel_settings</span>
-          </div>
-          <h3 class="font-bold text-on-surface">הלית בללי</h3>
-          <p class="text-sm text-on-surface-variant mt-1">מנהלת אדמיניסטרטיבית</p>
-        </div>
-        <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 text-center">
-          <div class="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-            <span class="material-symbols-outlined text-primary text-2xl">balance</span>
-          </div>
-          <h3 class="font-bold text-on-surface">עופר דוידוביץ</h3>
-          <p class="text-sm text-on-surface-variant mt-1">רואה חשבון</p>
-        </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">מיכל דויטש</h3>
       </div>
-
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">מלי כהן ברייר</h3>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">צביקה שדה</h3>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">אור דוכין</h3>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">אופיר מילר</h3>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">גולן נעים</h3>
+      </div>
     </div>
+
+    <!-- Audit Committee -->
+    <h2 class="text-sm md:text-base font-bold text-on-surface border-b border-outline-variant/30 pb-1 mb-2">ועדת ביקורת</h2>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-2 mb-3">
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">אורית מרנדה</h3>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">צור דיאמנט</h3>
+      </div>
+    </div>
+
+    <!-- Staff -->
+    <h2 class="text-sm md:text-base font-bold text-on-surface border-b border-outline-variant/30 pb-1 mb-2">בעלי תפקידים</h2>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">הלית בללי</h3>
+        <p class="text-xs text-on-surface-variant">מנהלת אדמיניסטרטיבית</p>
+      </div>
+      <div class="bg-white/60 border border-outline-variant/20 rounded-xl p-2.5 text-center">
+        <h3 class="font-bold text-on-surface text-sm">עופר דוידוביץ</h3>
+        <p class="text-xs text-on-surface-variant">רואה חשבון</p>
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-primary/10 bg-surface-container-low py-3 md:py-5">
-    <div class="flex flex-col md:flex-row justify-between items-center w-full px-5 md:px-12 max-w-7xl mx-auto gap-2">
+  <footer class="border-t border-primary/10 bg-surface-container-low py-2 flex-shrink-0">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-4 max-w-6xl mx-auto gap-1">
       <div class="text-center md:text-right">
-        <span class="text-sm font-bold text-primary">עמותת בית החינוך הדמוקרטי שבילים</span>
-        <span class="text-xs text-on-surface-variant mx-2">|</span>
-        <span class="text-xs text-on-surface-variant">&copy; 2026 כל הזכויות שמורות</span>
+        <span class="text-xs font-bold text-primary">עמותת בית החינוך הדמוקרטי שבילים</span>
+        <span class="text-xs text-on-surface-variant mx-1">|</span>
+        <span class="text-xs text-on-surface-variant">&copy; 2026</span>
       </div>
-      <div class="flex items-center gap-3 text-xs text-on-surface-variant">
-        <span>ע"ר 580527699 — פרדס חנה כרכור</span>
+      <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+        <span>ע"ר 580527699</span>
         <span>|</span>
-        <a href="privacy.html" class="hover:text-primary transition-colors">מדיניות פרטיות</a>
+        <a href="privacy.html" class="hover:text-primary transition-colors">פרטיות</a>
         <span>|</span>
-        <a href="accessibility.html" class="hover:text-primary transition-colors">הצהרת נגישות</a>
+        <a href="accessibility.html" class="hover:text-primary transition-colors">נגישות</a>
       </div>
     </div>
   </footer>
