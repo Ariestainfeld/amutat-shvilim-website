@@ -106,6 +106,22 @@
       text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3);
     }
 
+    /* ── Hero Carousel ── */
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* ── Side nav dots ── */
     .side-nav {
       position: fixed;
@@ -205,36 +221,36 @@
   <!-- SECTION 1: HERO                              -->
   <!-- ============================================ -->
   <section class="section-snap-item relative overflow-hidden" id="section1">
-    <!-- Background image -->
-    <div class="absolute inset-0 z-0">
+    <!-- Background carousel -->
+    <div class="absolute inset-0 z-0" id="hero-carousel">
+      <div class="carousel-slide active">
+        <img alt="בניין בית החינוך הדמוקרטי שבילים" src="assets/school-building.jpg" loading="eager"/>
+      </div>
+      <div class="carousel-slide">
+        <img alt="אירוע קהילתי בחצר בית הספר" src="assets/community-outdoor.jpg" loading="eager"/>
+      </div>
+      <div class="carousel-slide">
+        <img alt="אירוע ערב קהילתי" src="assets/evening-event.jpg" loading="lazy"/>
+      </div>
+      <div class="carousel-slide">
+        <img alt="תלמידים בסדנה" src="assets/workshop.jpg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/40 z-10"></div>
+    </div>
+
+    <!-- Centered logo + title -->
+    <div class="relative z-20 flex flex-col items-center justify-center h-full px-6">
       <img
-        alt="בית החינוך הדמוקרטי שבילים"
-        class="w-full h-full object-cover"
-        src="https://lh3.googleusercontent.com/aida/ADBb0ugXWQKAHzQY128g16vAEfjbLuF2t4dPAKfbnHm7PKEaDZBd5uqcFSVQLFWmhZzQfxq8oL7gsyh1GN7xxFiqknUV_zNT9u4ty7PQFMmC-JJb69i_k3PCbraoZD6pxK4ERFQ1cZgg_s-eh1nKvKcYIG37LfV0X03QdDw882acVShrMyfksIJsTUkC44uVCsHQy9zFF5gPDEkAaKHpGoNsP62Ytbuib9_xwpcF-vUlNlJL3fLvmexFEznI6KYc9wV-u0rrfZbW-SlVeA"
+        alt="לוגו שבילים"
+        class="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain drop-shadow-2xl mb-5 md:mb-8"
+        src="assets/logo.png"
         loading="eager"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/30"></div>
-    </div>
-
-    <!-- Logo + Title at top -->
-    <div class="absolute top-0 right-0 left-0 z-20 p-5 md:p-10">
-      <div class="flex items-center gap-3 md:gap-6 justify-center md:justify-end flex-row-reverse md:flex-row">
-        <h1 class="text-center md:text-right font-extrabold text-white leading-tight hero-text-shadow text-xl sm:text-2xl md:text-4xl lg:text-5xl">
-          עמותת בית החינוך הדמוקרטי<br> בפרדס חנה כרכור
-        </h1>
-        <img
-          alt="לוגו שבילים"
-          class="w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 object-contain drop-shadow-lg flex-shrink-0"
-          src="https://lh3.googleusercontent.com/aida/ADBb0ug9DV-_tPkrQSj7x7S4tandL_fNk5FDYJMx1m1qjR-thr88fL9EEAa12n_ZiTAInekIW7tXFVINHgoxTOf_kkgY9n6jyB9wrg-kWHmAlchISxqfZq-MzBcR30g7wqKM_dZ7H3i4PIb_IVpyBrNWQxOltGaXQa8CJmR-p4s-zxb8srH6zJO8hcoXvSQR2_bCOR3Mp6XEuwSdytlqEe2SZ2AXQr8JuQEq_gz-CTCgaVCBuqVhmPJQqG4b75QgktyLMC3DblgDQ6au-g"
-          loading="eager"
-        />
-      </div>
-    </div>
-
-    <!-- School name + CTA -->
-    <div class="relative z-10 flex flex-col items-center justify-end h-full pb-20 md:pb-32 px-6">
-      <p class="text-white text-lg sm:text-xl md:text-3xl font-bold mb-6 md:mb-8 hero-text-shadow text-center leading-relaxed">
-        בית החינוך הדמוקרטי שבילים ע"ש מנחם בגין
+      <h1 class="text-center font-extrabold text-white leading-tight hero-text-shadow text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-3 md:mb-4">
+        עמותת בית החינוך הדמוקרטי
+      </h1>
+      <p class="text-white text-base sm:text-lg md:text-2xl font-medium mb-8 md:mb-10 hero-text-shadow text-center leading-relaxed opacity-90">
+        שבילים ע"ש מנחם בגין — פרדס חנה כרכור
       </p>
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <a
@@ -252,10 +268,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-      <span class="material-symbols-outlined text-white text-4xl md:text-5xl">keyboard_double_arrow_down</span>
-    </div>
   </section>
 
   <!-- ============================================ -->
@@ -264,7 +276,7 @@
   <section class="section-snap-item bg-surface relative py-10 md:py-0" id="section2">
     <!-- Watermark -->
     <div class="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugXWQKAHzQY128g16vAEfjbLuF2t4dPAKfbnHm7PKEaDZBd5uqcFSVQLFWmhZzQfxq8oL7gsyh1GN7xxFiqknUV_zNT9u4ty7PQFMmC-JJb69i_k3PCbraoZD6pxK4ERFQ1cZgg_s-eh1nKvKcYIG37LfV0X03QdDw882acVShrMyfksIJsTUkC44uVCsHQy9zFF5gPDEkAaKHpGoNsP62Ytbuib9_xwpcF-vUlNlJL3fLvmexFEznI6KYc9wV-u0rrfZbW-SlVeA" loading="lazy"/>
+      <img alt="" class="w-full h-full object-cover" src="assets/school-building.jpg" loading="lazy"/>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full">
@@ -276,11 +288,11 @@
           <div class="bg-white/60 p-5 md:p-10 rounded-3xl border border-outline-variant/30 shadow-sm backdrop-blur-sm">
             <p class="text-on-surface-variant text-base md:text-xl leading-relaxed md:leading-loose text-right">
               עמותת ההורים נוסדה בשנת 2007 כיוזמה קהילתית על ידי כ-100 משפחות
-              במטרה להקים את בית ספר דמוקרטי ביישוב המתפתח.
+              במטרה להקים בית ספר דמוקרטי ביישוב המתפתח.
             </p>
             <p class="text-on-surface-variant text-base md:text-xl leading-relaxed md:leading-loose text-right mt-3 md:mt-4">
               כיום, בעמותה חברים למעלה מ-1,000 הורים.
-              לתלמידי בית החינוך — "שבילים" הוא בית הספר הדמוקרטי הגדול בישראל
+              "שבילים" הוא בית הספר הדמוקרטי הגדול בישראל
               עם כ-800 תלמידים בכיתות א'–י"ב.
             </p>
           </div>
@@ -290,25 +302,25 @@
         <div class="flex-1 w-full order-2 flex flex-col gap-5">
           <h2 class="text-2xl md:text-3xl font-extrabold text-primary text-right">מידע</h2>
           <div class="grid grid-cols-2 gap-3 md:gap-6">
-            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-primary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="#">
+            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-primary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="board.html">
               <div class="bg-primary-fixed w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-2xl md:text-3xl">groups</span>
               </div>
               <h3 class="text-sm md:text-lg font-bold text-on-surface leading-tight">חברי ועד<br>ובעלי תפקידים</h3>
             </a>
-            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-secondary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="#">
+            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-secondary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="announcements.html">
               <div class="bg-secondary-fixed w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-2xl md:text-3xl">description</span>
               </div>
               <h3 class="text-sm md:text-lg font-bold text-on-surface leading-tight">הודעות</h3>
             </a>
-            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-tertiary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="#">
+            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-tertiary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="reports.html">
               <div class="bg-tertiary-fixed w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-2xl md:text-3xl">payments</span>
               </div>
               <h3 class="text-sm md:text-lg font-bold text-on-surface leading-tight">דיווחים<br>ומידע כספי</h3>
             </a>
-            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-primary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="#">
+            <a class="group bg-surface-bright/80 p-5 md:p-8 rounded-2xl md:rounded-[2rem] border border-outline-variant/20 shadow-md hover:shadow-xl hover:bg-primary/5 transition-all duration-300 flex flex-col items-center text-center gap-2 md:gap-3" href="contact.html">
               <div class="bg-primary-fixed w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-2xl md:text-3xl">contact_support</span>
               </div>
@@ -371,9 +383,9 @@
       </div>
 
       <!-- Contact strip -->
-      <div class="bg-primary/5 border border-primary/15 rounded-2xl md:rounded-3xl p-6 md:p-10 max-w-3xl mx-auto text-center">
-        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4">צרו קשר</h3>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 mb-5">
+      <div class="bg-primary/5 border border-primary/15 rounded-2xl md:rounded-3xl p-5 md:p-8 max-w-2xl mx-auto text-center">
+        <h3 class="text-lg md:text-xl font-bold text-primary mb-3">צרו קשר</h3>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-6 mb-4">
           <a href="mailto:office@amutat-shvilim.org" class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm md:text-base">
             <span class="material-symbols-outlined text-xl">mail</span>
             office@amutat-shvilim.org
@@ -388,12 +400,11 @@
           </span>
         </div>
         <div class="flex items-center justify-center gap-4">
-          <a href="https://shvilim-management.vercel.app/parent/login" target="_blank"
-             class="bg-primary text-on-primary px-6 py-3 rounded-full text-sm md:text-base font-bold hover:scale-105 transition-transform">
-            פורטל הורים
-          </a>
-          <a href="#" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">פייסבוק</a>
-          <a href="#" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">אינסטגרם</a>
+          <a href="https://shvilim.mashov.info/" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">אתר בית הספר</a>
+          <span class="text-outline-variant">|</span>
+          <a href="https://www.guidestar.org.il/organization/580481034" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">גיידסטאר</a>
+          <span class="text-outline-variant">|</span>
+          <a href="https://www.facebook.com/share/g/1HNCQivwoq/" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">פייסבוק</a>
         </div>
       </div>
 
@@ -407,8 +418,12 @@
           <span class="text-xs text-on-surface-variant mx-2">|</span>
           <span class="text-xs text-on-surface-variant">&copy; 2026 כל הזכויות שמורות</span>
         </div>
-        <div class="text-xs text-on-surface-variant">
-          ע"ר 580527699 — פרדס חנה כרכור
+        <div class="flex items-center gap-3 text-xs text-on-surface-variant">
+          <span>ע"ר 580527699 — פרדס חנה כרכור</span>
+          <span>|</span>
+          <a href="privacy.html" class="hover:text-primary transition-colors">מדיניות פרטיות</a>
+          <span>|</span>
+          <a href="accessibility.html" class="hover:text-primary transition-colors">הצהרת נגישות</a>
         </div>
       </div>
     </footer>
@@ -445,6 +460,18 @@
 
     scroller.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
+  })();
+
+  // ── Hero carousel ──
+  (function() {
+    var slides = document.querySelectorAll('#hero-carousel .carousel-slide');
+    if (slides.length < 2) return;
+    var current = 0;
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
   })();
 </script>
 

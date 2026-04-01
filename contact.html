@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="he">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>דרכי תקשורת — עמותת שבילים</title>
+  <meta name="description" content="דרכי תקשורת ויצירת קשר עם עמותת בית החינוך הדמוקרטי שבילים — פרדס חנה כרכור">
+  <meta name="theme-color" content="#855328">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#855328",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdcc3",
+            "surface": "#fef8f3",
+            "surface-container-low": "#f8f3ee",
+            "on-surface": "#1d1b19",
+            "on-surface-variant": "#51443b",
+            "outline": "#84746a",
+            "outline-variant": "#d6c3b7",
+            "background": "#fef8f3",
+          },
+          fontFamily: {
+            "headline": ["Heebo", "sans-serif"],
+            "body": ["Heebo", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Heebo', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-sm border-b border-outline-variant/30 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors text-sm font-bold">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+        חזרה לדף הבית
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-bold text-primary hidden sm:inline">עמותת בית החינוך הדמוקרטי שבילים</span>
+        <img alt="לוגו שבילים" class="w-10 h-10 object-contain" src="assets/logo.png"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-1 max-w-5xl mx-auto px-5 py-8 md:py-12 w-full">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="bg-primary-fixed w-12 h-12 rounded-full flex items-center justify-center text-primary">
+        <span class="material-symbols-outlined text-2xl">contact_support</span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-primary">דרכי תקשורת</h1>
+    </div>
+
+    <p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
+      נשמח לעמוד לרשותכם בכל שאלה או פנייה.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Contact Cards -->
+      <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl">mail</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-on-surface">דוא"ל</h3>
+            <p class="text-sm text-on-surface-variant">לפניות כלליות</p>
+          </div>
+        </div>
+        <a href="mailto:office@amutat-shvilim.org" class="text-primary font-medium hover:underline" dir="ltr">office@amutat-shvilim.org</a>
+      </div>
+
+      <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl">phone</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-on-surface">טלפון</h3>
+            <p class="text-sm text-on-surface-variant">מנהלנית העמותה</p>
+          </div>
+        </div>
+        <a href="tel:0556605448" class="text-primary font-medium hover:underline" dir="ltr">055-660-5448</a>
+      </div>
+
+      <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-on-surface">כתובת</h3>
+            <p class="text-sm text-on-surface-variant">בית החינוך הדמוקרטי שבילים</p>
+          </div>
+        </div>
+        <p class="text-on-surface">פרדס חנה כרכור</p>
+      </div>
+
+      <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-2xl">public</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-on-surface">קישורים</h3>
+            <p class="text-sm text-on-surface-variant">אתרים וערוצים נוספים</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="https://shvilim.mashov.info/" target="_blank" class="text-primary font-medium hover:underline text-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-base">open_in_new</span>
+            אתר בית הספר
+          </a>
+          <a href="https://www.facebook.com/share/g/1HNCQivwoq/" target="_blank" class="text-primary font-medium hover:underline text-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-base">open_in_new</span>
+            עמוד הפייסבוק
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hours -->
+    <div class="bg-primary/5 border border-primary/15 rounded-2xl p-5 md:p-6 mt-8 max-w-md">
+      <h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+        <span class="material-symbols-outlined text-xl">schedule</span>
+        שעות פעילות משרד העמותה
+      </h3>
+      <p class="text-on-surface-variant text-sm">
+        ימים א'–ה', 09:00–15:00
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-primary/10 bg-surface-container-low py-3 md:py-5">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-5 md:px-12 max-w-7xl mx-auto gap-2">
+      <div class="text-center md:text-right">
+        <span class="text-sm font-bold text-primary">עמותת בית החינוך הדמוקרטי שבילים</span>
+        <span class="text-xs text-on-surface-variant mx-2">|</span>
+        <span class="text-xs text-on-surface-variant">&copy; 2026 כל הזכויות שמורות</span>
+      </div>
+      <div class="flex items-center gap-3 text-xs text-on-surface-variant">
+        <span>ע"ר 580527699 — פרדס חנה כרכור</span>
+        <span>|</span>
+        <a href="privacy.html" class="hover:text-primary transition-colors">מדיניות פרטיות</a>
+        <span>|</span>
+        <a href="accessibility.html" class="hover:text-primary transition-colors">הצהרת נגישות</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="he">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>דיווחים ומידע כספי — עמותת שבילים</title>
+  <meta name="description" content="דיווחים כספיים ומידע ציבורי של עמותת בית החינוך הדמוקרטי שבילים — פרדס חנה כרכור">
+  <meta name="theme-color" content="#855328">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#855328",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdcc3",
+            "tertiary": "#44664a",
+            "tertiary-fixed": "#c6ecc8",
+            "surface": "#fef8f3",
+            "surface-container-low": "#f8f3ee",
+            "on-surface": "#1d1b19",
+            "on-surface-variant": "#51443b",
+            "outline": "#84746a",
+            "outline-variant": "#d6c3b7",
+            "background": "#fef8f3",
+          },
+          fontFamily: {
+            "headline": ["Heebo", "sans-serif"],
+            "body": ["Heebo", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Heebo', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-sm border-b border-outline-variant/30 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors text-sm font-bold">
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+        חזרה לדף הבית
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-bold text-primary hidden sm:inline">עמותת בית החינוך הדמוקרטי שבילים</span>
+        <img alt="לוגו שבילים" class="w-10 h-10 object-contain" src="assets/logo.png"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="flex-1 max-w-5xl mx-auto px-5 py-8 md:py-12 w-full">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="bg-tertiary-fixed w-12 h-12 rounded-full flex items-center justify-center text-tertiary">
+        <span class="material-symbols-outlined text-2xl">payments</span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-primary">דיווחים ומידע כספי</h1>
+    </div>
+
+    <p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
+      העמותה פועלת בשקיפות מלאה. להלן הדוחות הכספיים והמידע הציבורי של העמותה.
+    </p>
+
+    <!-- Reports sections -->
+    <div class="space-y-6">
+
+      <div>
+        <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mb-4">דוחות כספיים שנתיים</h2>
+        <div class="space-y-3">
+          <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">picture_as_pdf</span>
+              <span class="font-medium text-on-surface">דוח כספי שנתי — תשפ"ה (2024-2025)</span>
+            </div>
+            <span class="text-xs text-on-surface-variant">בקרוב</span>
+          </div>
+          <div class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">picture_as_pdf</span>
+              <span class="font-medium text-on-surface">דוח כספי שנתי — תשפ"ד (2023-2024)</span>
+            </div>
+            <span class="text-xs text-on-surface-variant">בקרוב</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mb-4">פרוטוקולים</h2>
+        <div class="bg-white/40 border border-outline-variant/15 rounded-2xl p-5 opacity-60">
+          <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-xl">upcoming</span>
+            <p class="text-sm">פרוטוקולי ישיבות הועד יפורסמו כאן בקרוב.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg md:text-xl font-bold text-on-surface border-b border-outline-variant/30 pb-2 mb-4">קישורים חיצוניים</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="https://www.guidestar.org.il/organization/580481034" target="_blank" class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 flex items-center gap-3 hover:bg-primary/5 transition-colors">
+            <span class="material-symbols-outlined text-primary text-xl">open_in_new</span>
+            <div>
+              <h3 class="font-bold text-on-surface text-sm">גיידסטאר</h3>
+              <p class="text-xs text-on-surface-variant">מידע ציבורי על העמותה ברשם העמותות</p>
+            </div>
+          </a>
+          <a href="#" class="bg-white/60 border border-outline-variant/20 rounded-2xl p-5 flex items-center gap-3 hover:bg-primary/5 transition-colors">
+            <span class="material-symbols-outlined text-primary text-xl">open_in_new</span>
+            <div>
+              <h3 class="font-bold text-on-surface text-sm">רשם העמותות</h3>
+              <p class="text-xs text-on-surface-variant">ע"ר 580527699</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-primary/10 bg-surface-container-low py-3 md:py-5">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-5 md:px-12 max-w-7xl mx-auto gap-2">
+      <div class="text-center md:text-right">
+        <span class="text-sm font-bold text-primary">עמותת בית החינוך הדמוקרטי שבילים</span>
+        <span class="text-xs text-on-surface-variant mx-2">|</span>
+        <span class="text-xs text-on-surface-variant">&copy; 2026 כל הזכויות שמורות</span>
+      </div>
+      <div class="flex items-center gap-3 text-xs text-on-surface-variant">
+        <span>ע"ר 580527699 — פרדס חנה כרכור</span>
+        <span>|</span>
+        <a href="privacy.html" class="hover:text-primary transition-colors">מדיניות פרטיות</a>
+        <span>|</span>
+        <a href="accessibility.html" class="hover:text-primary transition-colors">הצהרת נגישות</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
